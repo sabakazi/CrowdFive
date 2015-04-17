@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" id="ppstyle" type="text/css" href="style.css">
+    <link rel='stylesheet' href='./css/font-awesome.min.css'/><link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <script src="./js/jquery-2.1.0.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/blocs.js"></script>
+    <title>index - </title>
+</head>
+<body>
+<!-- Main container -->
+<div class="page-container">
+    
+<!-- Hero Bloc -->
+<div id="hero-bloc" class="bloc hero  bg-map d-bloc">
+	<div class="container bloc-sm hero-nav">
+		<nav class="navbar row">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">CrowdFive</a>
+				<button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-1">
+				<ul class="site-navigation nav pull-right">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="v-center text-center">
+		<div class="vc-content">
+			<h1 class="">
+				StoryTelling
+			</h1>
+			<h3 class="">
+				Can you write a compelling story ?
+			</h3><br /><br /><br /><a href="index.html" class="btn-wire btn btn-xl">Get Started</a><a id="scroll-hero" class="btn-dwn" href="#"><span class="fa fa-chevron-down"></span></a>
+		</div>
+	</div>
+</div>
+<!-- Hero Bloc END -->
+
+<!-- bloc-2 -->
+<div class="bloc l-bloc " id="bloc-2">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="mg-md ">
+					Create your story
+				</h3>
+				<p class="">
+					Create a story that links together the following pictures.
+				</p>
+			</div>
+		</div>
+		<div class="row voffset">
+			<div class="col-sm-4">
+				<img id="img1" src="img/placeholder-image.png" class="img-responsive img-frame-lg" alt='' />
+				<h3 class="mg-md ">
+					#bird
+				</h3>
+				<textarea class="textyarea" style="">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+				</textarea>
+			</div>
+			<div  class="col-sm-4">
+				<img id="img2" src="img/placeholder-image.png" class="img-responsive img-frame-lg" alt='' />
+				<h3 class="mg-md ">
+					#cat
+				</h3>
+					<textarea class="textyarea" style="">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+				</textarea>
+			</div>
+			<div class="col-sm-4">
+				<img id="img3" src="img/placeholder-image.png" class="img-responsive img-frame-lg" alt='' />
+				<h3 class="mg-md ">
+					#obama
+				</h3>
+				<textarea class="textyarea" style="">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+				</textarea>
+			</div>
+		</div>
+		<div class="row voffset" style="text-align:center;margin-top:50px">
+			 <a href="index.html" class="btn   btn-lg btn-c-1">Publish it</a>
+	    </div>		
+	</div>
+</div>
+<!-- bloc-2 END -->
+
+<!-- bloc-3 END -->
+</div>
+<!-- Main container END -->
+
+</body>
+    
+<script type="text/javascript">
+
+$.ajax({
+  url: "https://thesyncer.com:440/cgi-bin/mypython.py",
+  beforeSend: function( xhr ) {
+    xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+  }
+})
+  .done(function( data ) {
+    if ( console && console.log ) 
+      {
+      console.log( "Sample of data:", data);
+       var json = JSON.stringify(eval("(" + data + ")"));
+       alert(json.results);
+      //obj = $.parseJSON(data);
+      //alert(obj);
+      
+      $("#img1").attr("src",data);
+    }
+  });
+</script>    
+<!-- Google Analytics -->
+
+<!-- Google Analytics END -->
+
+</html>
